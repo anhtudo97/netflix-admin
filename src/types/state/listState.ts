@@ -1,6 +1,7 @@
-import { User } from "./user";
+import { List } from "../list";
+
 export interface IState {
-  user: User | null;
+  user: List[] | null;
   isFetching: boolean;
   error: boolean;
 }
