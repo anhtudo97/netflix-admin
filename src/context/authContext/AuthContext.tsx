@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import { IState } from "../../types/auth";
+import { IState } from "../../types/state/authState";
 import { AuthReducer } from "./AuthReducer";
 
 const INITIAL_STATE: IState = {
