@@ -3,7 +3,7 @@ import { IState } from "../../types/state/authState";
 import { AuthReducer } from "./AuthReducer";
 
 const INITIAL_STATE: IState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user") || "") || null,
   isFetching: false,
   error: false,
 };
