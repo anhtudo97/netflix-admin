@@ -1,7 +1,7 @@
 import { List } from "../list";
 
 export interface IState {
-  user: List[] | null;
+  lists: List[] | [];
   isFetching: boolean;
   error: boolean;
 }
