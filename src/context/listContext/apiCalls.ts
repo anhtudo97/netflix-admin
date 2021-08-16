@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Dispatch } from "react";
 import { List } from "../../types/list";
 import {
   createListFailure,
@@ -16,7 +15,7 @@ import {
 const token = JSON.parse(localStorage.getItem("user") || "").accessToken;
 
 // GET
-export const getLists = async (dispatch: any) => {
+export const getLists = async (dispatch: React.Dispatch<any>) => {
   dispatch(getListsStart());
   try {
     const res = await axios.get("/lists", {
@@ -31,7 +30,7 @@ export const getLists = async (dispatch: any) => {
 };
 
 // CREATE
-export const createList = async (list: List, dispatch: any) => {
+export const createList = async (list: List, dispatch: React.Dispatch<any>) => {
   dispatch(createListStart());
   try {
     const res = await axios.post("/lists", list, {
@@ -46,7 +45,7 @@ export const createList = async (list: List, dispatch: any) => {
 };
 
 // DELETE
-export const deleteList = async (id: string, dispatch: any) => {
+export const deleteList = async (id: string, dispatch: React.Dispatch<any>) => {
   dispatch(deleteListStart());
   try {
     await axios.delete("/lists/" + id, {
