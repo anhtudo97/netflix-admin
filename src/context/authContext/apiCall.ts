@@ -1,8 +1,10 @@
 import axios from "axios";
-import { User } from "../../types/user";
 import { loginStart, loginSuccess, loginFailure } from "./AuthActions";
 
-export const login = async (user: User, dispatch: React.Dispatch<any>) => {
+export const login = async (
+  user: { email: string; password: string },
+  dispatch: React.Dispatch<any>
+) => {
   dispatch(loginStart());
   try {
     const res = await axios.post("auth/login", user);
